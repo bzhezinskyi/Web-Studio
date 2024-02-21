@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>WebStudio</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo logo">
+            <span class="logo__txt">Web</span>
+            <span class="logo__txt logo__txt--dark">Studio</span>
+          </a>
+          <div class="header__body">
+            <button
+              type="button"
+              class="header__btn btn"
+              aria-controls="menu-container"
+              data-menu-btn
+            >
+              <svg class="btn__icon btn__icon--open">
+                <use href="img/symbol-defs.svg#menu"></use>
+              </svg>
+              <svg class="btn__icon btn__icon--close">
+                <use href="img/symbol-defs.svg#close"></use>
+              </svg>
+            </button>
+            <div class="header__box" id="menu-container" data-menu>
+              <nav class="header__menu menu">
+                <ul class="menu__list">
+                  <li class="menu__item">
+                    <a href="#" class="menu__link menu__link--accent">Студія</a>
+                  </li>
+                  <li class="menu__item">
+                    <a href="#" class="menu__link">Портфоліо</a>
+                  </li>
+                  <li class="menu__item">
+                    <a href="#" class="menu__link">Контакти</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="header__contacts contacts">
+                <ul class="contacts__list">
+                  <li class="contacts__item">
+                    <a href="#" class="contacts__link contacts__link--number">
+                      <svg class="contacts__icon">
+                        <use href="img/symbol-defs.svg#smartphone"></use>
+                      </svg>
+                      +38 096 111 11 11
+                    </a>
+                  </li>
+                  <li class="contacts__item">
+                    <a href="#" class="contacts__link">
+                      <svg class="contacts__icon">
+                        <use href="img/symbol-defs.svg#envelope"></use>
+                      </svg>
+                      info@dewstudio.com
+                    </a>
+                  </li>
+                </ul>
+                <ul class="contacts__subcontacts subcontacts__list">
+                  <li class="subcontacts__item">
+                    <a href="#" class="subcontacts__link">instagram</a>
+                  </li>
+                  <li class="subcontacts__item">
+                    <a href="#" class="subcontacts__link">twitter</a>
+                  </li>
+                  <li class="subcontacts__item">
+                    <a href="#" class="subcontacts__link">facebook</a>
+                  </li>
+                  <li class="subcontacts__item">
+                    <a href="#" class="subcontacts__link">linkedin</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main></main>
+      <footer class="footer">
+        <div class="footer__container">
+          <div class="footer__address address">
+            <a href="#" class="footer__logo logo logo--footer">
+              <span class="logo__txt">Web</span>
+              <span class="logo__txt logo__txt--light">Studio</span>
+            </a>
+            <ul class="address__list">
+              <li class="address__item">
+                <a href="#" class="address__link address__link--light"
+                  >м. Київ, просп. Лесі Українки 26</a
+                >
+              </li>
+              <li class="address__item">
+                <a href="#" class="address__link">info@example.com</a>
+              </li>
+              <li class="address__item">
+                <a href="#" class="address__link">+38 099 111 11 11</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__social-link social-link">
+            <h3 class="social-link__title subtitle subtitle--light">
+              Приєднуйтесь
+            </h3>
+            <ul class="social-link__list">
+              <li class="social-link__item">
+                <a href="#" class="social-link__link social-link__link">
+                  <svg class="social-link__icon">
+                    <use href="img/symbol-defs.svg#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-link__item">
+                <a href="#" class="social-link__link">
+                  <svg class="social-link__icon">
+                    <use href="img/symbol-defs.svg#twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-link__item">
+                <a href="#" class="social-link__link">
+                  <svg class="social-link__icon">
+                    <use href="img/symbol-defs.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-link__item">
+                <a href="#" class="social-link__link">
+                  <svg class="social-link__icon">
+                    <use href="img/symbol-defs.svg#linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__subscription subscription">
+            <h3 class="subscription__title subtitle subtitle--light">
+              Підпишись на розсилку
+            </h3>
+            <form action="" class="subscription__form">
+              <input
+                type="email"
+                placeholder="E-mail"
+                name=""
+                id=""
+                class="subscription__input"
+              />
+              <button type="submit" class="subscription__btn button">
+                <span>Підписатися</span>
+                <svg><use href="img/symbol-defs.svg#send"></use></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/mobile-menu.js"></script>
+  </body>
+</html>
