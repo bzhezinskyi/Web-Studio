@@ -3,6 +3,9 @@ body {
   font-weight: 400;
   font-size: 14px;
   color: $color-primary;
+  &.menu__is-open {
+    overflow: hidden;
+  }
 }
 .wrapper {
   min-height: 100%;

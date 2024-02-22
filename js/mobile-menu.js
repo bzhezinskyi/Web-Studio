@@ -11,6 +11,7 @@
     menuBtnRef.setAttribute("aria-expandet", !expanded);
 
     mobileMenuRef.classList.toggle("is-open");
+    document.body.classList.toggle("menu__is-open");
     wrapper.classList.toggle("menu__is-open");
   });
 })();
