@@ -8,25 +8,8 @@ $color-light: #ffffff;
 $bg-primary: #f5f4fa;
 $bg-secondary: #2f303a;
 $bg-accent: #2196f3;
-$bg-accent-hover: #1b7ecf;
+$bg-accent-hover: #188ce8;
 $bg-light: #ffffff;
 
 // animation
 $cubic: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-// width
-$mob-s-min: 20rem; // 320px
-$mob-s-max: 23.4988rem; // 375.98px
-$mob-m-min: 23.5rem; // 376px
-$mob-m-max: 29.9988rem; // 479.98px
-$mob-l-min: 30rem; // 480px
-$mob-l-max: 47.9988rem; // 767.98px
-
-$tab-s-min: 48rem; // 768px
-// $tab-s-max: 900px;
-// $tab-l-min: 900px;
-$tab-l-max: 63.9988rem; // 1023.98px
-
-$desc-s-min: 64rem; // 1024px
-$desc-s-max: 72.9988rem; // 1167.98px
-$desc-m-min: 73rem; //  1168px

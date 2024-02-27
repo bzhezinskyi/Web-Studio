@@ -14,39 +14,52 @@
             <span class="logo__txt">Web</span>
             <span class="logo__txt logo__txt--dark">Studio</span>
           </a>
-          <div class="header__body">
+          <div class="header__menu menu">
             <button
               type="button"
-              class="header__btn btn"
-              aria-controls="menu-container"
-              data-menu-btn
+              class="menu__btn menu__btn--open"
+              id="mobile-menu-btn"
+              data-modal="mobile-menu"
             >
-              <svg class="btn__icon btn__icon--open">
-                <use href="img/symbol-defs.svg#menu"></use>
-              </svg>
-              <svg class="btn__icon btn__icon--close">
-                <use href="img/symbol-defs.svg#close"></use>
-              </svg>
+              <svg><use href="img/symbol-defs.svg#menu"></use></svg>
             </button>
-            <div class="header__box" id="menu-container" data-menu>
-              <nav class="header__menu menu">
-                <ul class="menu__list">
-                  <li class="menu__item">
-                    <a href="#" class="menu__link menu__link--accent">Студія</a>
+            <div class="menu__body" id="mobile-menu">
+              <button
+                type="button"
+                class="menu__btn menu__btn--close modal-exit"
+                id="mobile-menu-btn"
+                data-modal="mobile-menu"
+              >
+                <svg><use href="img/symbol-defs.svg#close"></use></svg>
+              </button>
+              <nav class="menu__nav nav">
+                <ul class="nav__list">
+                  <li class="nav__item">
+                    <a
+                      href="./index.html"
+                      class="nav__link"
+                      data-nav-link="/index.html"
+                      >Студія</a
+                    >
                   </li>
-                  <li class="menu__item">
-                    <a href="./portfolio.html" class="menu__link">Портфоліо</a>
+                  <li class="nav__item">
+                    <a
+                      href="./portfolio.html"
+                      class="nav__link"
+                      data-nav-link="/portfolio.html"
+                      >Портфоліо</a
+                    >
                   </li>
-                  <li class="menu__item">
-                    <a href="#" class="menu__link">Контакти</a>
+                  <li class="nav__item">
+                    <a href="#" class="nav__link">Контакти</a>
                   </li>
                 </ul>
               </nav>
-              <div class="header__contacts contacts">
+              <div class="menu__contacts contacts">
                 <ul class="contacts__list">
                   <li class="contacts__item">
                     <a href="#" class="contacts__link contacts__link--number">
-                      <svg class="contacts__icon">
+                      <svg>
                         <use href="img/symbol-defs.svg#smartphone"></use>
                       </svg>
                       +38 096 111 11 11
@@ -54,14 +67,16 @@
                   </li>
                   <li class="contacts__item">
                     <a href="#" class="contacts__link">
-                      <svg class="contacts__icon">
+                      <svg>
                         <use href="img/symbol-defs.svg#envelope"></use>
                       </svg>
                       info@dewstudio.com
                     </a>
                   </li>
                 </ul>
-                <ul class="contacts__subcontacts subcontacts__list">
+              </div>
+              <div class="menu__subcontacts subcontacts">
+                <ul class="subcontacts__list">
                   <li class="subcontacts__item">
                     <a href="#" class="subcontacts__link">instagram</a>
                   </li>
@@ -80,13 +95,21 @@
           </div>
         </div>
       </header>
+
       <main>
         <section class="hero">
           <img class="hero__img" src="img/hero/bg-hero.jpg" />
           <h1 class="hero__title">Ефективне рішення для вашого бізнесу</h1>
-          <button class="hero__btn button">Замовити послуги</button>
+          <button
+            class="hero__btn button"
+            id="modal-open-btn"
+            data-modal="modal-one"
+          >
+            Замовити послуги
+          </button>
         </section>
       </main>
+
       <footer class="footer">
         <div class="footer__container">
           <div class="footer__address address">
@@ -163,8 +186,98 @@
           </div>
         </div>
       </footer>
+
+      <div class="modal" id="modal-one">
+        <div class="modal__overlay modal-exit"></div>
+        <div class="modal__body">
+          <h2 class="modal__title">Залишіть свої дані, ми вам зателефонуємо</h2>
+          <form action="" class="modal__form form">
+            <label for="name" class="form__label">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                class="form__input"
+                placeholder="Андрій"
+              />
+              <span class="form__box">
+                <span class="form__fild">Ім'я</span>
+                <svg class="form__icon">
+                  <use href="img/symbol-defs.svg#person"></use>
+                </svg>
+              </span>
+            </label>
+            <label for="number" class="form__label">
+              <input
+                type="tel"
+                name="number"
+                id="number"
+                required
+                class="form__input"
+                placeholder="+380 96 111 11 11"
+              />
+              <span class="form__box">
+                <span class="form__fild">Телефон</span>
+                <svg class="form__icon">
+                  <use href="img/symbol-defs.svg#phone"></use>
+                </svg>
+              </span>
+            </label>
+            <label for="email" class="form__label">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                class="form__input"
+                placeholder="andrew@mail.com"
+              />
+              <span class="form__box">
+                <span class="form__fild">Пошта</span>
+                <svg class="form__icon">
+                  <use href="img/symbol-defs.svg#email"></use>
+                </svg>
+              </span>
+            </label>
+            <label for="comments" class="form__label">
+              <textarea
+                class="form__input form__input--textarea"
+                placeholder="Введіть тукст"
+                name="comments"
+                id="comments"
+              ></textarea>
+              <span class="form__box">
+                <span class="form__fild form__fild--textarea">Коментар</span>
+              </span>
+            </label>
+            <label for="checkbox" class="form__label checkbox">
+              <input
+                name="checkbox"
+                type="checkbox"
+                required
+                id="checkbox"
+                class="checkbox__input"
+              />
+
+              <span class="checkbox__txt">
+                Погоджуюся з розсилкою та приймаю
+                <a href="" class="checkbox__link">Умови договору</a>
+              </span>
+            </label>
+            <button type="submit" class="form__btn button">Надіслати</button>
+          </form>
+
+          <button class="modal__close modal-exit">
+            <svg class="modal__close-icon">
+              <use href="img/symbol-defs.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <script src="js/mobile-menu.js"></script>
+    <script src="js/active-page.js"></script>
+    <script src="js/modal.js"></script>
   </body>
 </html>

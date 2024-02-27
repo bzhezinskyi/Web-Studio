@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 400px;
+  height: 25rem;
   background-image: linear-gradient(to top, #2f303a66, #2f303a66);
   &__img {
     position: absolute;
@@ -22,20 +22,20 @@
     }
   }
   &__title {
-    font-size: 26px;
+    font-size: 1.625rem;
     font-weight: 900;
-    line-height: 42px;
+    line-height: 2.625rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: $color-light;
 
-    width: 360px;
-    margin-bottom: 30px;
-    @media (min-width: $desc-s-min) {
-      font-size: 44px;
-      line-height: 60px;
+    width: 22.5rem;
+    margin-bottom: 1.875rem;
+    @include ms(desc-s) {
+      font-size: 2.75rem;
+      line-height: 3.75rem;
 
-      width: 600px;
+      width: 37.5rem;
     }
   }
   &__btn {

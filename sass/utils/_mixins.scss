@@ -1,1 +1,61 @@
+@mixin ms($type) {
+  $mob-s: 20rem; //   320px mob-s-min
+  $mob-m: 23.5rem; // 376px mob-m-min
+  $mob-l: 30rem; //   480px mob-l-min
 
+  $tab-s: 48rem; //   768px tab-s-min
+
+  $desc-s: 64rem; //  1024px desc-s-min
+  $desc-m: 73rem; //  1168px desc-m-min
+
+  @if $type == mob-s {
+    @media (min-width: $mob-s) {
+      @content;
+    }
+  }
+  @if $type == mob-s-up {
+    @media (max-width: ($mob-m - 0.0013rem)) {
+      @content;
+    }
+  }
+  @if $type == mob-m {
+    @media (min-width: $mob-m) {
+      @content;
+    }
+  }
+  @if $type == mob-m-up {
+    @media (max-width: ($mob-l - 0.0013rem)) {
+      @content;
+    }
+  }
+  @if $type == mob-l {
+    @media (min-width: $mob-l) {
+      @content;
+    }
+  }
+  @if $type == mob-l-up {
+    @media (max-width: ($tab-s - 0.0013rem)) {
+      @content;
+    }
+  }
+  @if $type == tab-s {
+    @media (min-width: $tab-s) {
+      @content;
+    }
+  }
+  @if $type == tab-s-up {
+    @media (max-width: ($desc-s - 0.0013rem)) {
+      @content;
+    }
+  }
+  @if $type == desc-s {
+    @media (min-width: $desc-s) {
+      @content;
+    }
+  }
+  @if $type == desc-s-up {
+    @media (max-width: ($desc-m - 0.0013rem)) {
+      @content;
+    }
+  }
+}

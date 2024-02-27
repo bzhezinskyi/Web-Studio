@@ -1,0 +1,41 @@
+.social-link {
+  &__title {
+  }
+  &__list {
+    display: flex;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+  &__link {
+    display: block;
+    width: 44px;
+    height: 44px;
+    padding: 12px;
+    border-radius: 50%;
+
+    background-color: #ffffff1a;
+    fill: $color-light;
+
+    transition: all $cubic;
+
+    &--light {
+      background-color: $color-light;
+      fill: $color-primary;
+    }
+
+    &:hover,
+    &:focus {
+      fill: $color-light;
+      background-color: $color-accent;
+    }
+  }
+  &__icon {
+    width: 20px;
+    height: 20px;
+
+    fill: inherit;
+  }
+}

@@ -1,11 +1,16 @@
 body {
   font-family: Roboto;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: $color-primary;
-  &.menu__is-open {
+
+  &.modal-open {
     overflow: hidden;
   }
+}
+svg {
+  width: 14px;
+  height: 14px;
 }
 .wrapper {
   min-height: 100%;

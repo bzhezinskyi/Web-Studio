@@ -7,27 +7,62 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @media (min-width: $tab-s-min) {
+
+    @include ms(tab-s) {
       height: 5rem;
     }
   }
   &__logo {
   }
-  &__body {
-    width: 100%;
+  &__menu {
   }
+}
+
+.menu {
+  width: 100%;
+
   &__btn {
-  }
-  &__box {
-    @media (max-width: $mob-l-max) {
+    position: absolute;
+    right: 0.75rem;
+    top: 0.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: $color-secondary;
+    transition: fill $cubic;
+    @include ms(tab-s) {
       display: none;
     }
-    @media (min-width: $tab-s-min) {
+
+    &:hover,
+    &:focus {
+      fill: $color-accent;
+    }
+    &--open {
+    }
+    &--close {
+    }
+    & svg {
+      height: 2.5rem;
+      width: 2.5rem;
+      //   position: absolute;
+      //   top: 50%;
+      //   left: 50%;
+      //   transform: translate(-50%, -50%);
+
+      //   height: 2.5rem;
+      //   width: 2.5rem;
+      //   transition: height $cubic;
+    }
+  }
+  &__body {
+    @include ms(tab-s-up) {
+      display: none;
+    }
+    @include ms(tab-s) {
       display: flex;
     }
-
-    &.is-open {
-      @media (max-width: $mob-l-max) {
+    &.open {
+      @include ms(tab-s-up) {
         position: fixed;
         top: 0;
         right: 0;
@@ -39,81 +74,42 @@
         flex-direction: column;
         justify-content: space-between;
 
-        padding: 48px 40px;
+        padding: 3rem 2.5rem;
 
         background-color: $bg-light;
       }
     }
   }
-  &__menu {
+  &__nav {
   }
   &__contacts {
   }
-}
-.btn {
-  position: absolute;
-  right: 0.75rem;
-  top: 4px;
-  z-index: 2;
-  width: 2.5rem;
-  height: 2.5rem;
-  fill: $color-secondary;
-  transition: fill $cubic;
-  @media (min-width: $mob-l-max) {
-    display: none;
-  }
-
-  &.is-open {
-    z-index: 3;
-  }
-  &:hover,
-  &:focus {
-    fill: $color-accent;
-  }
-  &__icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    height: 2.5rem;
-    width: 2.5rem;
-    transition: height $cubic;
-  }
-  &__icon--open {
-  }
-  &__icon--close {
-    height: 0;
-  }
-  &.is-open .btn__icon--open {
-    height: 0;
-  }
-  &.is-open .btn__icon--close {
-    height: 2.5rem;
+  &__subcontacts {
   }
 }
-.menu {
+
+.nav {
   margin-right: auto;
 
-  @media (max-width: $mob-l-max) {
+  @include ms(mob-l-up) {
     margin-bottom: 2rem;
   }
-  @media (max-width: 376px) {
+  @include ms(mob-s-up) {
     margin-bottom: 1rem;
   }
-  @media (min-width: $tab-s-min) {
+  @include ms(tab-s) {
     margin-top: auto;
     margin-bottom: auto;
   }
   &__list {
-    @media (min-width: $tab-s-min) {
+    @include ms(tab-s) {
       display: flex;
       gap: 3.125rem;
     }
   }
   &__item {
     &:not(:last-child) {
-      @media (max-width: $mob-l-max) {
+      @include ms(mob-l-up) {
         margin-bottom: 2rem;
       }
     }
@@ -127,60 +123,59 @@
     color: $color-secondary;
     transition: color $cubic;
 
-    @media (min-width: $tab-s-min) {
+    @include ms(tab-s) {
       font-size: 14px;
       line-height: 16px;
     }
-    @media (min-width: $desc-s-min) {
-    }
+
     &:hover,
     &:focus {
       color: $color-accent;
     }
-  }
-  &__link--accent {
-    color: $color-accent;
-    @media (min-width: 768px) {
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -2rem;
-        width: 100%;
-        height: 0.25rem;
-        border-radius: 0.5rem;
-        background-color: $bg-accent;
-        color: $color-accent;
+    &--accent {
+      color: $color-accent;
+      @include ms(tab-s) {
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -2rem;
+          width: 100%;
+          height: 0.25rem;
+          border-radius: 0.5rem;
+          background-color: $bg-accent;
+          color: $color-accent;
+        }
       }
     }
   }
 }
 .contacts {
   &__list {
-    @media (min-width: $tab-s-min) {
+    @include ms(tab-s) {
       display: flex;
       flex-direction: column-reverse;
       gap: 10px;
     }
-    @media (min-width: $desc-s-min) {
+    @include ms(desc-s) {
       flex-direction: row-reverse;
       gap: 30px;
     }
   }
   &__item {
     &:not(:last-child) {
-      @media (max-width: $mob-l-max) {
+      @include ms(mob-l-up) {
         margin-bottom: 2rem;
       }
-      @media (max-width: 376px) {
+      @include ms(mob-s-up) {
         margin-bottom: 1rem;
       }
     }
     &:last-child {
-      @media (max-width: $mob-l-max) {
+      @include ms(mob-l-up) {
         margin-bottom: 4rem;
       }
-      @media (max-width: 376px) {
+      @include ms(mob-s-up) {
         margin-bottom: 2rem;
       }
     }
@@ -191,15 +186,15 @@
     line-height: 0.875rem;
     letter-spacing: 0.02em;
 
-    @media (min-width: $tab-s-min) {
+    @include ms(tab-s) {
       display: flex;
       gap: 8px;
     }
-    @media (max-width: $mob-l-max) {
+    @include ms(mob-l-up) {
       font-size: 1.5rem;
       line-height: 1.75rem;
     }
-    @media (max-width: 376px) {
+    @include ms(mob-s-up) {
       font-size: 1.25rem;
     }
     &:hover,
@@ -207,45 +202,43 @@
       color: $color-accent;
       fill: $color-accent;
     }
-  }
-  &__link--number {
-    @media (max-width: $mob-l-max) {
-      font-size: 2.125rem;
-      line-height: 2.5rem;
-      color: $color-accent;
+    &--number {
+      @include ms(mob-l-up) {
+        font-size: 2.125rem;
+        line-height: 2.5rem;
+        color: $color-accent;
+      }
+      @include ms(mob-s-up) {
+        font-size: 1.625rem;
+      }
     }
-    @media (max-width: 376px) {
-      font-size: 1.625rem;
-    }
-  }
-  &__icon {
-    width: 14px;
-    height: 14px;
-    fill: inherit;
+    & svg {
+      width: 0.875rem;
+      height: 0.875rem;
+      fill: inherit;
 
-    @media (max-width: $mob-l-max) {
-      display: none;
+      @include ms(mob-l-up) {
+        display: none;
+      }
     }
-  }
-  &__subcontacts {
   }
 }
 .subcontacts {
   &__list {
-    @media (min-width: $tab-s-min) {
+    @include ms(tab-s) {
       display: none;
     }
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 0.625rem;
   }
   &__item {
     &:not(:last-child) ::after {
       content: "";
-      width: 1px;
+      width: 0.0625rem;
       height: 100%;
-      margin-left: 10px;
-      border-right: 1px solid #21212133;
+      margin-left: 0.625rem;
+      border-right: 0.0625rem solid #21212133;
     }
   }
   &__link {
@@ -257,14 +250,14 @@
     color: $color-accent;
 
     @media (max-width: 445px) {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
-    @media (max-width: 376px) {
-      font-size: 12px;
+    @include ms(mob-s-up) {
+      font-size: 0.75rem;
     }
 
     @media (max-width: 340px) {
-      font-size: 10px;
+      font-size: 0.625rem;
     }
 
     &:hover,
